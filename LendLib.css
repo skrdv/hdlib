@@ -1,4 +1,4 @@
-∫#newCat {
+#newCat {
     max-width: 250px;
 }
 
@@ -9,4 +9,7 @@
 #btnAddItem span{
 	color:#5cb85c;
 	font-size:4rem;
+}
+
+.madewith img{ width:15rem;
 }
