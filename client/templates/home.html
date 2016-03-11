@@ -1,9 +1,21 @@
 <template name="home">
 	{{#markdown}}
-	## Welcome
-	Some text
-	{{{exampleHelper}}}
-	{{> contextExample someText="I was set in the parent template's helper, as an argument." }}
-	{{> contextExample dataContextHelper}}
+		## Welcome
+		Some text
+
+		{{{exampleHelper}}}
+		{{> contextExample someText="I was set in the parent template's helper, as an argument." }}
+		{{> contextExample dataContextHelper}}
 	{{/markdown}}
+
+	{{#with dataContextHelper}}
+		{{> contextExample}}
+		<p>{{someNested.text}}</p>
+	{{/with}}
+
+	{{#blockHelperExample myValue=true}}
+		<span>Some Content</span>
+	{{else}}
+		<span>Some Warning</span>
+	{{/blockHelperExample}}
 </template>
