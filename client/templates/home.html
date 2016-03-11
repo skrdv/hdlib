@@ -1,0 +1,9 @@
+<template name="home">
+	{{#markdown}}
+	## Welcome
+	Some text
+	{{{exampleHelper}}}
+	{{> contextExample someText="I was set in the parent template's helper, as an argument." }}
+	{{> contextExample dataContextHelper}}
+	{{/markdown}}
+</template>
