@@ -93,37 +93,37 @@ Meteor.startup(function () {
 		var dummyGates = [
 			{
 				title: 'Ворота Реализации. Gate of Realizing',
-				slug: '47',
+				number: '47',
 				center: 'Ajna',
 				description: 'Энергия этих ворот приводит куски абстрактного знания из противоположных 64-х ворот в завершённую идею, в моменты вроде “Ага!”. Это прозрение и создание целой концепции или процесса из абстракции, без использования логики. Ранее это были разбросанные куски, но теперь это целое.',
 			},
 			{
 				title: 'Ворота Рационализации. Gate of Rationalizing',
-				slug: '24',
+				number: '24',
 				center: 'Ajna',
 				description: '',
 			},
 			{
 				title: 'Ворота Формулизации. Gate of Formulization',
-				slug: '4',
+				number: '4',
 				center: 'Ajna',
 				description: '',
 			},
 			{
 				title: 'Ворота Идей. Gate of Ideas',
-				slug: '11',
+				number: '11',
 				center: 'Ajna',
 				description: '',
 			},
 			{
 				title: 'Ворота Прозрения. Gate of Insight',
-				slug: '43',
+				number: '43',
 				center: 'Ajna',
 				description: '',
 			},
 			{
 				title: 'Ворота Мнений. Gate of Opinions',
-				slug: '17',
+				number: '17',
 				center: 'Ajna',
 				description: '',
 			},

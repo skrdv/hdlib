@@ -6,7 +6,5 @@ Tracker.autorun(function(){
 	Meteor.subscribe('lazyload-posts', Session.get('lazyloadLimit'));
 });
 
-Meteor.subscribe("current-user");
-
-
-Meteor.subscribe("Gates");
+Meteor.subscribe("gates-center");
+Meteor.subscribe("gates-all");

@@ -1,26 +1,23 @@
 Template.home.created = function(){
-	 console.log('Created home template');
+	 console.log('Created Home template');
 
 };
 
 Template.home.rendered = function(){
-	 console.log('Rendered home template');
-	 
+	 console.log('Rendered Home template');
+
 };
 
 Template.home.destroyed = function(){
-	 console.log('Destroyed home template');
+	 console.log('Destroyed Home template');
 };
 
 Template.home.helpers({
-	postsList: function(){
-		 return Posts.find({}, {timeCreated: -1});
+	gatesList: function(){
+		 return Gates.find({});
 	},
 });
 
 Template.home.events({
-	"click button.lazyload": function(event, template){
-		var currentLimit = Session.get("lazyloadLimit");
-		Session.set("lazyloadLimit", currentLimit + 2);
-	}
+
 });

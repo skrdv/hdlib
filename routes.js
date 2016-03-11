@@ -33,13 +33,24 @@ Router.map(function() {
         template: 'home',
 
         subscriptions: function(){
-            return Meteor.subscribe("lazyload-posts", Session.get('lazyloadLimit'));
+            return Meteor.subscribe("gates-all");
         }
     });
 
-    this.route('About', {
-        path: '/about',
-        template: 'about'
+
+
+    this.route('Lists', {
+        path: '/lists',
+        template: 'lists'
+    });
+
+	this.route('Posts', {
+        path: '/posts',
+        template: 'posts',
+
+        subscriptions: function(){
+            return Meteor.subscribe("lazyload-posts", Session.get('lazyloadLimit'));
+        }
     });
 
     this.route('Post', {

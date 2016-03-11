@@ -1,6 +1,3 @@
-// #Storing Data -> Setup a collection
-//Posts = new Mongo.Collection('posts');
-
 
 // #Security with allow and deny rules -> Restricting database updates
 if(Meteor.isServer) {

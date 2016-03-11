@@ -51,6 +51,14 @@ Meteor.publish("userRoles", function(){
 
 
 /* Posts */
-Meteor.publish("Gates", function(){
+Meteor.publish("gates-all", function(){
 	return Gates.find();
+});
+
+Meteor.publish("gates-center", function(){
+	return Gates.find({}, {
+		fields: {
+			center: 1
+		},
+	});
 });
