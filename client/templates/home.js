@@ -1,24 +1,18 @@
-Template.home.rendered = function(){
-	 console.log('Rendered home template helper');
+Template.home.created = function(){
+	 console.log('Created home template');
 };
 
+Template.home.rendered = function(){
+	 console.log('Rendered home template');
+};
+
+Template.home.destroyed = function(){
+	 console.log('Destroyed home template');
+};
 
 Template.home.helpers({
 	postsList: function(){
-		 return [
-			{
-				 title: 'My second entry',
-				 description: 'Borem sodum color sit amet...',
-				 author: 'Fabian',
-				 timeCreated: moment().subtract(3, 'days').unix()
-			},
-			{
-				 title: 'My first entry',
-				 description: 'Lorem ipsum dolor sit amet...',
-				 author: 'Fabian',
-				 timeCreated: moment().subtract(7, 'days').unix()
-			},
-		];
+		 return Posts.find({}, {timeCreated: -1});
 	},
 });
 

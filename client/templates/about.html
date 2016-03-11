@@ -1,6 +1,16 @@
 <template name="about">
-	{{#markdown}}
-	## Welcome
-	Some text
-	{{/markdown}}
+	<div class="container">
+		{{> loginButtons}}
+	</div>
+	<div id="lendlib" class="container">
+		<div id="categories-container" class="container">
+			{{> categories}}
+		</div>
+		<div id="list">
+			{{> list}}
+		</div>
+		<div class="madewith pull-right">
+			Made with Meteor
+		</div>
+	</div>
 </template>
