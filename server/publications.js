@@ -2,7 +2,6 @@
 Meteor.publish("Categories", function() {
 	return lists.find({owner:this.userId}, {fields: {Category:1}});
 });
-
 Meteor.publish("listdetails", function(category_id){
 	return lists.find({_id:category_id});
 });
@@ -37,6 +36,19 @@ Meteor.publish("lazyload-posts", function(limit){
 Meteor.publish("single-post", function(slug){
 	return Posts.find({slug: slug});
 });
+
+Meteor.publish("current-user", function(){
+	this.userId;
+});
+
+Meteor.publish("userRoles", function(){
+	if(this.uiserId) {
+		return Meteor.users.find({_id: this.userId}, {fields: {roles: 1}});
+	} else {
+		this.ready();
+	}
+});
+
 
 /* Posts */
 Meteor.publish("Gates", function(){

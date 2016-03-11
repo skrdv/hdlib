@@ -26,3 +26,6 @@ momentjs:moment
 iron:router
 reactive-var
 multiply:iron-router-progress
+deepwell:authorization
+wizonesolutions:underscore-string
+accounts-base

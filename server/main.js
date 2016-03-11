@@ -1,6 +1,38 @@
 Meteor.startup(function () {
 	console.log('Server started');
 
+	if(Meteor.users.find().count() === 0) {
+
+		console.log('Create Admin user');
+
+		var userId = Accounts.createUser({
+			username: 'admin',
+			email: 'admin@skrdv.com',
+			password: '1234',
+			profile: {
+				name: 'Admin'
+			}
+		});
+
+		Meteor.users.update(userId, {$set: {
+			roles: {admin: true},
+		}});
+	}
+
+	if(this.userId) {
+
+		console.log('this.userId: '.this.userId);
+		console.log('Meteor.userId: '.Meteor.userId());
+		console.log('Update Admin user');
+
+		//Meteor.users.update({_id:this.userId}, {$set: {roles: {admin: true}}});
+		Meteor.users.update({email: 'skrdvx@gmail.com'}, {$set: {roles: {admin: true}}});
+
+		Meteor.users.update(userId, {$set: {
+			roles: {admin: true},
+		}});
+	}
+
 	if(Posts.find().count() === 0) {
 
 		console.log('Adding dummy posts');

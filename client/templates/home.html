@@ -4,9 +4,12 @@
 	Here I'm talking about my latest discoveries from the world of JavaScript.
 	{{/markdown}}
 
+	{{#if currentUser.roles.admin}}
+		<a href="/create-post" class="createNewPost">Create new post</a>
+	{{/if}}
+
 	<!-- Listing posts -->
 	{{#each postsList}}
-		<h2>This comes from Session: <strong>{{sessionExample}}</strong></h2>
 		{{> postInList}}
 	{{/each}}
 

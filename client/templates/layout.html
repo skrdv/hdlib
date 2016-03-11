@@ -10,6 +10,7 @@
 					<a href="/about">About</a>
 				</li>
 			</ul>
+			{{> loginButtons}}
 		</div>
 	</header>
 	<div class="container">
@@ -22,5 +23,11 @@
 <template name="notFound">
 	<div class="center">
 		<h1>404</h1>
+	</div>
+</template>
+
+<template name="loading">
+	<div class="center">
+		<h1>Loading</h1>
 	</div>
 </template>

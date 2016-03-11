@@ -21,6 +21,7 @@ ddp-client@1.2.1
 ddp-common@1.2.2
 ddp-rate-limiter@1.0.0
 ddp-server@1.2.2
+deepwell:authorization@2.0.4
 deps@1.0.9
 diff-sequence@1.0.1
 ecmascript@0.1.6
@@ -30,6 +31,7 @@ email@1.0.8
 es5-shim@4.1.14
 fastclick@1.0.7
 geojson-utils@1.0.4
+handlebars@1.0.4
 hot-code-push@1.0.0
 html-tools@1.0.5
 htmljs@1.0.5
@@ -89,3 +91,4 @@ underscore@1.0.4
 url@1.0.5
 webapp@1.2.3
 webapp-hashing@1.0.5
+wizonesolutions:underscore-string@1.0.0

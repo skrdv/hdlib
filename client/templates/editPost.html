@@ -1,0 +1,13 @@
+<template name="editPost">
+	<div class="editPost">
+		<form>
+			<label>Title</label>
+			<input name="title" type="text" placeholder="Awesome title" value="{{title}}">
+			<label>Description</label>
+			<textarea name="description" placeholder="Short description displayed in posts list" rows="3">{{description}}</textarea>
+			<label>Content</label>
+			<textarea name="text" rows="10" placeholder="Brilliant content">{{text}}</textarea>
+			<button type="submit" class="save">{{saveButtonText}}</button>
+		</form>
+	</div>
+</template>
