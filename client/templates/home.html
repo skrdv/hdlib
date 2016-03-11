@@ -1,23 +1,14 @@
 <template name="home">
-
-	<!-- {{#markdown}}
-		{{{exampleHelper}}}
-		{{> contextExample someText="I was set in the parent template's helper, as an argument." }}
-		{{> contextExample dataContextHelper}}
+	{{#markdown}}
+	## Welcome
+	Here I'm talking about my latest discoveries from the world of JavaScript.
 	{{/markdown}}
 
-	{{#with dataContextHelper}}
-		{{> contextExample}}
-		<p>{{someNested.text}}</p>
-	{{/with}} -->
-
+	<!-- Listing posts -->
 	{{#each postsList}}
 		{{> postInList}}
 	{{/each}}
 
-	{{#blockHelperExample myValue=true}}
-		<span>Some Content</span>
-	{{else}}
-		<span>Some Warning</span>
-	{{/blockHelperExample}}
+	<!-- #Controlling the data flow -> Lazy load posts or how to change subscriptions -->
+	<button class="lazyload">Load more</button>
 </template>

@@ -17,7 +17,8 @@ Template.home.helpers({
 });
 
 Template.home.events({
-	"click #foo": function(event, template){
-
+	"click button.lazyload": function(event, template){
+		var currentLimit = Session.get("lazyloadLimit");
+		Session.set("lazyloadLimit", currentLimit + 2);
 	}
 });

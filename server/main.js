@@ -1,11 +1,4 @@
 Meteor.startup(function () {
-	Meteor.publish("Categories", function() {
-		return lists.find({owner:this.userId}, {fields: {Category:1}});
-	});
-	Meteor.publish("listdetails", function(category_id){
-		return lists.find({_id:category_id});
-	});
-
 	console.log('Server started');
 
 	if(Posts.find().count() === 0) {
@@ -58,6 +51,55 @@ Meteor.startup(function () {
 		// we add the dummyPosts to our database
 		_.each(dummyPosts, function(post){
 			Posts.insert(post);
+		});
+	}
+
+	if(Gates.find().count() === 0) {
+
+		console.log('Adding dummy gates');
+
+		var dummyGates = [
+			{
+				title: 'Ворота Реализации. Gate of Realizing',
+				slug: '47',
+				center: 'Ajna',
+				description: 'Энергия этих ворот приводит куски абстрактного знания из противоположных 64-х ворот в завершённую идею, в моменты вроде “Ага!”. Это прозрение и создание целой концепции или процесса из абстракции, без использования логики. Ранее это были разбросанные куски, но теперь это целое.',
+			},
+			{
+				title: 'Ворота Рационализации. Gate of Rationalizing',
+				slug: '24',
+				center: 'Ajna',
+				description: '',
+			},
+			{
+				title: 'Ворота Формулизации. Gate of Formulization',
+				slug: '4',
+				center: 'Ajna',
+				description: '',
+			},
+			{
+				title: 'Ворота Идей. Gate of Ideas',
+				slug: '11',
+				center: 'Ajna',
+				description: '',
+			},
+			{
+				title: 'Ворота Прозрения. Gate of Insight',
+				slug: '43',
+				center: 'Ajna',
+				description: '',
+			},
+			{
+				title: 'Ворота Мнений. Gate of Opinions',
+				slug: '17',
+				center: 'Ajna',
+				description: '',
+			},
+		];
+
+		// we add the dummyPosts to our database
+		_.each(dummyGates, function(gate){
+			Gates.insert(gate);
 		});
 	}
 });
