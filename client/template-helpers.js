@@ -22,19 +22,15 @@ Template.home.helpers({
 			}
 		}
 	},
-	create: function(){
-
-	},
-	rendered: function(){
-
-	},
-	destroyed: function(){
-
-	},
 });
 
-Template.home.events({
-	"click #foo": function(event, template){
-
+Template.registerHelper("formatTime", function(time,type){
+	switch (type) {
+		case 'fromNow':
+			return moment.unix(time).fromNow();
+		case 'iso':
+			return moment.unix(time).toISOString();
+		default:
+			return moment.unix(time).format('LLLL');
 	}
 });

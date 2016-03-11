@@ -1,8 +1,6 @@
 <template name="home">
-	{{#markdown}}
-		## Welcome
-		Some text
 
+	<!-- {{#markdown}}
 		{{{exampleHelper}}}
 		{{> contextExample someText="I was set in the parent template's helper, as an argument." }}
 		{{> contextExample dataContextHelper}}
@@ -11,7 +9,11 @@
 	{{#with dataContextHelper}}
 		{{> contextExample}}
 		<p>{{someNested.text}}</p>
-	{{/with}}
+	{{/with}} -->
+
+	{{#each postsList}}
+		{{> postInList}}
+	{{/each}}
 
 	{{#blockHelperExample myValue=true}}
 		<span>Some Content</span>
