@@ -1,25 +1,11 @@
 Meteor.subscribe("Categories");
+
 Tracker.autorun(function(){
-	 Meteor.subscribe("listdetails", Session.get("current_list"));
+	Meteor.subscribe("listdetails", Session.get("current_list"));
 });
 
-// We are declaring the 'adding_category' flag
 Session.set('adding_category', false);
-// counter starts at 0
 Session.setDefault('counter', 0);
-
-/* Template.hello.helpers({
-	counter: function () {
-		return Session.get('counter');
-	}
-});
-
-Template.hello.events({
-	'click button': function () {
-		// increment the counter when button is clicked
-		Session.set('counter', Session.get('counter') + 1);
-	}
-});*/
 
 Template.categories.helpers({
 	lists: function () {

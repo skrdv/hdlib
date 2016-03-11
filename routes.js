@@ -12,9 +12,9 @@ Router.configure({
         var data = Posts.findOne({slug: this.params.slug});
 
         if(_.isObject(data) && !_.isArray(data))
-            document.title = 'My Meteor Blog - '+ data.title;
+            document.title = 'HDLib- '+ data.title;
         else
-            document.title = 'My Meteor Blog - '+ this.route.getName();
+            document.title = 'HDLib - '+ this.route.getName();
     }
 });
 
@@ -47,7 +47,6 @@ Router.map(function() {
         waitOn: function() {
             return Meteor.subscribe('single-post', this.params.slug);
         },
-
         data: function() {
             return Posts.findOne({slug: this.params.slug});
         }

@@ -1,5 +1,9 @@
 Template.home.created = function(){
 	 console.log('Created home template');
+
+	 this.autorun(function(){
+		console.log(Session.get("mySessionExample"));
+	 });
 };
 
 Template.home.rendered = function(){
@@ -14,6 +18,9 @@ Template.home.helpers({
 	postsList: function(){
 		 return Posts.find({}, {timeCreated: -1});
 	},
+	sessionExample: function () {
+		return Session.get('mySessionExample');
+	}
 });
 
 Template.home.events({
