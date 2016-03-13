@@ -18,14 +18,18 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 accounts-password
 accounts-ui
-twbs:bootstrap
 less
 jeeeyul:moment-with-langs
 markdown
 momentjs:moment
 iron:router
 reactive-var
-multiply:iron-router-progress
-deepwell:authorization
 wizonesolutions:underscore-string
 accounts-base
+sacha:spin
+semantic:ui
+useraccounts:semantic-ui
+semantic:ui-css
+aldeed:autoform
+fabienb4:autoform-semantic-ui
+iandouglas:accounts-ui-semantic-ui

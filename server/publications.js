@@ -37,17 +37,7 @@ Meteor.publish("single-post", function(slug){
 	return Posts.find({slug: slug});
 });
 
-Meteor.publish("current-user", function(){
-	this.userId;
-});
 
-Meteor.publish("userRoles", function(){
-	if(this.uiserId) {
-		return Meteor.users.find({_id: this.userId}, {fields: {roles: 1}});
-	} else {
-		this.ready();
-	}
-});
 
 
 /* Posts */
