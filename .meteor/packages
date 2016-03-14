@@ -16,8 +16,6 @@ standard-minifiers      # JS/CSS minifiers run for production mode
 es5-shim                # ECMAScript 5 compatibility for older browsers.
 ecmascript              # Enable ECMAScript2015+ syntax in app code
 
-accounts-password
-accounts-ui
 less
 jeeeyul:moment-with-langs
 markdown
@@ -25,11 +23,8 @@ momentjs:moment
 iron:router
 reactive-var
 wizonesolutions:underscore-string
-accounts-base
 sacha:spin
 semantic:ui
-useraccounts:semantic-ui
 semantic:ui-css
-aldeed:autoform
-fabienb4:autoform-semantic-ui
+semantic:ui-data
 iandouglas:accounts-ui-semantic-ui

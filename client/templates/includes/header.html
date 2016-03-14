@@ -1,20 +1,16 @@
 <template name="header">
 
-	<div class="ui menu">
+	<div class="ui large top fixed hidden menu">
 		<div class="header item">HDLib</div>
-		<a class="item" href="{{pathFor 'Home'}}">Home</a>
+		<a class="item" href="/"><i class="home icon"></i> Home</a>
 		<a class="item" href="{{pathFor 'Posts'}}">Posts</a>
 		<a class="item" href="{{pathFor 'Lists'}}">Lists</a>
-		<div class="right">
-			<div class="ui dropdown item" tabindex="0">Dropdown
-				<i class="dropdown icon"></i>
-				<div class="menu transition hidden" tabindex="-1">
-					<div class="item">Action</div>
-					<div class="item">Another Action</div>
-				</div>
-			</div>
-			{{> loginButtons}}
+		{{#if currentUser}}
+		<div class="ui dropdown item">
+			{{currentUser.emails.[0].address}} <i class="icon dropdown"></i>
 		</div>
+		{{/if}}
+		{{> loginButtons}}
 	</div>
 
 </template>

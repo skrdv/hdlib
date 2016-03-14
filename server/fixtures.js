@@ -2,26 +2,121 @@ Meteor.startup(function () {
 	console.log('Server started');
 });
 
-if(Meteor.users.find().count() === 0) {
+function adminUser(userId) {
+	var adminUser = Meteor.users.findOne({username:"skrdv"});
+	return (userId && adminUser && userId === adminUser._id );
+}
 
-	console.log('Create Admin user');
+if(Centers.find().count() === 0) {
+	console.log('Adding dummy centers');
 
-	var userId = Accounts.createUser({
-		username: 'admin',
-		email: 'admin@skrdv.com',
-		password: '1234',
-		profile: {
-			name: 'Admin'
-		}
+	var dummyCenters = [
+		{
+			title: 'Head',
+			tranclate: 'Теменной центр',
+			description: '',
+		},
+		{
+			title: 'Ajna',
+			tranclate: 'Аджна',
+			description: '',
+		},
+		{
+			title: 'Throat',
+			tranclate: 'Горловой центр',
+			description: '',
+		},
+		{
+			title: 'G',
+			tranclate: 'Центр Джи',
+			description: '',
+		},
+		{
+			title: 'Ego',
+			tranclate: 'Центр Эго',
+			description: '',
+		},
+		{
+			title: 'Солнечное сплетение',
+			tranclate: '',
+			description: '',
+		},
+		{
+			title: 'Sacral',
+			tranclate: 'Сакральный центр',
+			description: '',
+		},
+		{
+			title: 'Spleen',
+			tranclate: 'Селезенка',
+			description: '',
+		},
+		{
+			title: 'Root',
+			tranclate: 'Корневой центр',
+			description: '',
+		},
+	];
+
+	_.each(dummyCenters, function(center){
+		Centers.insert(center);
 	});
+}
 
-	Meteor.users.update(userId, {$set: {
-		roles: {admin: true},
-	}});
+if(Gates.find().count() === 0) {
+	console.log('Adding dummy gates');
+
+	var dummyGates = [
+		{
+			number: '47',
+			center: 'Ajna',
+			title: 'Gate of Realizing',
+			tranclateate: 'Ворота Реализации',
+			description: 'Энергия этих ворот приводит куски абстрактного знания из противоположных 64-х ворот в завершённую идею, в моменты вроде “Ага!”. Это прозрение и создание целой концепции или процесса из абстракции, без использования логики. Ранее это были разбросанные куски, но теперь это целое.',
+		},
+		{
+			number: '24',
+			center: 'Ajna',
+			title: 'Gate of Rationalizing',
+			tranclateate: 'Ворота Рационализации',
+			description: '',
+		},
+		{
+			number: '4',
+			center: 'Ajna',
+			title: 'Gate of Formulization',
+			tranclateate: 'Ворота Формулизации',
+			description: '',
+		},
+		{
+			number: '11',
+			center: 'Ajna',
+			title: 'Gate of Ideas',
+			tranclateate: 'Ворота Идей',
+			description: '',
+		},
+		{
+			number: '43',
+			center: 'Ajna',
+			title: 'Gate of Insight',
+			tranclateate: 'Ворота Прозрения',
+			description: '',
+		},
+		{
+			number: '17',
+			center: 'Ajna',
+			title: 'Gate of Opinions',
+			tranclateate: 'Ворота Мнений',
+			description: '',
+		},
+	];
+
+	_.each(dummyGates, function(gate){
+		Gates.insert(gate);
+	});
 }
 
 if(Posts.find().count() === 0) {
-
 	console.log('Adding dummy posts');
 
 	var dummyPosts = [
@@ -71,58 +166,4 @@ if(Posts.find().count() === 0) {
 	_.each(dummyPosts, function(post){
 		Posts.insert(post);
 	});
-}
-
-if(Gates.find().count() === 0) {
-
-	console.log('Adding dummy gates');
-
-	var dummyGates = [
-		{
-			title: 'Ворота Реализации. Gate of Realizing',
-			number: '47',
-			center: 'Ajna',
-			description: 'Энергия этих ворот приводит куски абстрактного знания из противоположных 64-х ворот в завершённую идею, в моменты вроде “Ага!”. Это прозрение и создание целой концепции или процесса из абстракции, без использования логики. Ранее это были разбросанные куски, но теперь это целое.',
-		},
-		{
-			title: 'Ворота Рационализации. Gate of Rationalizing',
-			number: '24',
-			center: 'Ajna',
-			description: '',
-		},
-		{
-			title: 'Ворота Формулизации. Gate of Formulization',
-			number: '4',
-			center: 'Ajna',
-			description: '',
-		},
-		{
-			title: 'Ворота Идей. Gate of Ideas',
-			number: '11',
-			center: 'Ajna',
-			description: '',
-		},
-		{
-			title: 'Ворота Прозрения. Gate of Insight',
-			number: '43',
-			center: 'Ajna',
-			description: '',
-		},
-		{
-			title: 'Ворота Мнений. Gate of Opinions',
-			number: '17',
-			center: 'Ajna',
-			description: '',
-		},
-	];
-
-	// we add the dummyPosts to our database
-	_.each(dummyGates, function(gate){
-		Gates.insert(gate);
-	});
-}
-
-function adminUser(userId) {
-	var adminUser = Meteor.users.findOne({username:"skrdv"});
-	return (userId && adminUser && userId === adminUser._id );
 }

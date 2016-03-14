@@ -14,7 +14,10 @@ Template.home.destroyed = function(){
 
 Template.home.helpers({
 	gatesList: function(){
-		 return Gates.find({});
+		 return Gates.find();
+	},
+	centersList: function(){
+		 return Centers.find();
 	},
 });
 

@@ -1,0 +1,11 @@
+
+.pusher {
+	padding-top: 100px;
+}
+
+.segment.map {
+	width: 600px;
+	height: 600px;
+	margin: 0 auto;
+	background: url(/skrdv.png) center center no-repeat;
+}

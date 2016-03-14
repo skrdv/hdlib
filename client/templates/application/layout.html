@@ -1,13 +1,16 @@
 <template name="layout">
 
-	<div id="header" class="ui ">
-		{{> header}}
-	</div>
-	<div id="promo" class="ui ">
-		{{> promo}}
-	</div>
-	<div id="main" class="ui ">
-		{{> yield}}
-	</div>
+	<header>
+        {{> header}}
+    </header>
 
+	<div class="pusher">
+    	<div class="ui text container promo">
+        	{{> promo}}
+    	</div>
+    	<div class="ui text container content">
+        	{{> yield}}
+    	</div>
+    </div>
+	
 </template>

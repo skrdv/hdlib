@@ -1,9 +1,42 @@
 <template name="home">
 
-	<div id="wrap"></div>
+	<h1 class="ui dividing massive header"></h1>
+	<h1 class="ui dividing massive header"></h1>
 
-	{{#each gatesList}}
-		{{> gateInList}}
-	{{/each}}
+	<h1 class="ui dividing massive header">Gates:</h1>
+
+	<div class="ui vertical stripe segment hidden">
+		<div class="ui text container">
+
+			<div class="ui raised segment">
+				<div class="ui list">
+
+					{{#each gatesList}}
+						{{> gateInList}}
+					{{/each}}
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<h1 class="ui dividing massive header">Centers:</h1>
+
+	<div class="ui vertical stripe segment hidden">
+		<div class="ui text container">
+
+			<div class="ui raised segment">
+				<div class="ui list">
+
+					{{#each centersList}}
+						{{> centerItem}}
+					{{/each}}
+
+				</div>
+			</div>
+
+		</div>
+	</div>
 
 </template>

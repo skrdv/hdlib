@@ -40,7 +40,7 @@ Meteor.publish("single-post", function(slug){
 
 
 
-/* Posts */
+/* Gates */
 Meteor.publish("gates-all", function(){
 	return Gates.find();
 });
@@ -51,4 +51,8 @@ Meteor.publish("gates-center", function(){
 			center: 1
 		},
 	});
+});
+
+Meteor.publish("centers-all", function(){
+	return Centers.find();
 });
