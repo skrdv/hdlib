@@ -1,3 +1,24 @@
+/* Gates */
+Meteor.publish("gates-all", function(){
+	return Gates.find();
+});
+
+Meteor.publish("gates-center", function(){
+	return Gates.find({}, {
+		fields: {
+			center: 1
+		},
+	});
+});
+
+Meteor.publish("centers-all", function(){
+	return Centers.find();
+});
+
+Meteor.publish("pages", function(){
+	return Pages.find();
+});
+
 /* Lending */
 Meteor.publish("Categories", function() {
 	return lists.find({owner:this.userId}, {fields: {Category:1}});
@@ -35,24 +56,4 @@ Meteor.publish("lazyload-posts", function(limit){
 });
 Meteor.publish("single-post", function(slug){
 	return Posts.find({slug: slug});
-});
-
-
-
-
-/* Gates */
-Meteor.publish("gates-all", function(){
-	return Gates.find();
-});
-
-Meteor.publish("gates-center", function(){
-	return Gates.find({}, {
-		fields: {
-			center: 1
-		},
-	});
-});
-
-Meteor.publish("centers-all", function(){
-	return Centers.find();
 });

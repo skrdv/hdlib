@@ -1,6 +1,10 @@
 
 .pusher {
-	padding-top: 100px;
+	padding-top: 80px;
+}
+
+.promo {
+	padding: 20px 0;
 }
 
 .segment.map {

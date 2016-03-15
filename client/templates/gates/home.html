@@ -1,9 +1,20 @@
 <template name="home">
 
-	<h1 class="ui dividing massive header"></h1>
-	<h1 class="ui dividing massive header"></h1>
+	<div class="ui vertical stripe segment hidden">
+		<div class="ui text container">
 
-	<h1 class="ui dividing massive header">Gates:</h1>
+			<div class="ui raised segment">
+				<div class="ui list">
+
+					{{#each centersList}}
+						{{> centerItem}}
+					{{/each}}
+
+				</div>
+			</div>
+
+		</div>
+	</div>
 
 	<div class="ui vertical stripe segment hidden">
 		<div class="ui text container">
@@ -21,22 +32,8 @@
 		</div>
 	</div>
 
-	<h1 class="ui dividing massive header">Centers:</h1>
+	
 
-	<div class="ui vertical stripe segment hidden">
-		<div class="ui text container">
 
-			<div class="ui raised segment">
-				<div class="ui list">
-
-					{{#each centersList}}
-						{{> centerItem}}
-					{{/each}}
-
-				</div>
-			</div>
-
-		</div>
-	</div>
 
 </template>

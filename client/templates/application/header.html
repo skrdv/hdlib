@@ -2,14 +2,17 @@
 
 	<div class="ui large top fixed hidden menu">
 		<div class="header item">HDLib</div>
-		<a class="item" href="/"><i class="home icon"></i> Home</a>
+		<a class="item" href="/">
+			<i class="home icon"></i> Home
+		</a>
+<a class="item" href="{{pathFor 'Pages'}}">Pages</a>
 		<a class="item" href="{{pathFor 'Posts'}}">Posts</a>
 		<a class="item" href="{{pathFor 'Lists'}}">Lists</a>
-		{{#if currentUser}}
+		<!-- {{#if currentUser}}
 		<div class="ui dropdown item">
 			{{currentUser.emails.[0].address}} <i class="icon dropdown"></i>
 		</div>
-		{{/if}}
+		{{/if}} -->
 		{{> loginButtons}}
 	</div>
 
