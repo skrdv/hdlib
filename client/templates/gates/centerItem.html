@@ -1,10 +1,16 @@
 <template name="centerItem">
 
-	<div class="item">
-		<div class="content">
-			<div class="header">{{title}}</div>
-			<div class="description">{{description}}</div>
-		</div>
+<div class="ui segment center {{title}}">
+	<div class="header">
+		<div class="title">{{translate}}</div>
+		<div class="description">{{description}}</div>
 	</div>
+	<div class="content">
+		{{#each gatesInCenter}}
+			{{> gateItem}}
+		{{/each}}
+	</div>
+</div>
+
 
 </template>

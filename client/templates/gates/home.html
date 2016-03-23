@@ -1,39 +1,17 @@
 <template name="home">
 
-	<div class="ui vertical stripe segment hidden">
+	<div class="ui vertical stripe segment">
 		<div class="ui text container">
 
-			<div class="ui raised segment">
-				<div class="ui list">
+			<div class="ui segment map bg">
 
-					{{#each centersList}}
-						{{> centerItem}}
-					{{/each}}
-
-				</div>
 			</div>
+
+			{{#each centersList}}
+				{{> centerItem}}
+			{{/each}}
 
 		</div>
 	</div>
-
-	<div class="ui vertical stripe segment hidden">
-		<div class="ui text container">
-
-			<div class="ui raised segment">
-				<div class="ui list">
-
-					{{#each gatesList}}
-						{{> gateInList}}
-					{{/each}}
-
-				</div>
-			</div>
-
-		</div>
-	</div>
-
-	
-
-
 
 </template>

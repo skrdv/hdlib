@@ -5,15 +5,15 @@
 		<a class="item" href="/">
 			<i class="home icon"></i> Home
 		</a>
-<a class="item" href="{{pathFor 'Pages'}}">Pages</a>
+		<a class="item" href="{{pathFor 'Pages'}}">Pages</a>
+		{{#if currentUser}}
+		<a class="item" href="{{pathFor 'Submit'}}">Submit</a>
+		{{/if}}
 		<a class="item" href="{{pathFor 'Posts'}}">Posts</a>
 		<a class="item" href="{{pathFor 'Lists'}}">Lists</a>
-		<!-- {{#if currentUser}}
-		<div class="ui dropdown item">
-			{{currentUser.emails.[0].address}} <i class="icon dropdown"></i>
-		</div>
-		{{/if}} -->
 		{{> loginButtons}}
 	</div>
+
+	<h1 class="ui header">{{pageTitle}}</h1>
 
 </template>

@@ -1,23 +1,22 @@
 /* Gates */
-Meteor.publish("gates-all", function(){
+Meteor.publish("gates", function(){
 	return Gates.find();
 });
 
-Meteor.publish("gates-center", function(){
-	return Gates.find({}, {
-		fields: {
-			center: 1
-		},
-	});
-});
-
-Meteor.publish("centers-all", function(){
+Meteor.publish("centers", function(){
 	return Centers.find();
 });
 
 Meteor.publish("pages", function(){
 	return Pages.find();
 });
+
+Meteor.publish('pageSingle', function(id) {
+  check(id, String);
+  return Pages.find(id);
+});
+
+
 
 /* Lending */
 Meteor.publish("Categories", function() {
